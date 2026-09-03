@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OUR STORY · Nesha & Shisi</title>
+  <!-- Google Fonts (elegan & mudah dibaca) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 (gratis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: transparent; /* cream soft */
+      color: #3e3a3a;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* warna palet */
+    :root {
+      --cream: #fcf8f2;
+      --white: #ffffff;
+      --dusty-pink: #e8c6c2;
+      --beige: #e6dcd2;
+      --soft-brown: #b7a295;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      --radius: 28px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+    
+    /* ----- NAVBAR ----- */
+    nav {
+      padding: 20px 0 10px;
+      display: flex;
+      justify-content: center;
+      gap: 2.4rem;
+      flex-wrap: wrap;
+      background: rgba(252, 248, 242, 0.75);
+      backdrop-filter: blur(4px);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(183, 162, 149, 0.15);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4d423c;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      background: transparent;
+    }
+
+    nav a:hover {
+      background: var(--dusty-pink);
+      color: #2f2a27;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(183, 162, 149, 0.1);
+    }
+    .profile-avatar-placeholder img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.bg-image-main {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url("https://raw.githubusercontent.com/rndmq/informatika/refs/heads/main/IMG-20260902-WA0002.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+.profile-avatar-shisi {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #f0e3dc;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+  margin-bottom: 18px;
+}
+
+.profile-avatar-shisi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+    /* ----- FADE-IN ANIMATION (muncul saat scroll) ----- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ----- SECTION UMUM ----- */
+    section {
+      padding: 60px 0 50px;
+      border-bottom: 1px solid rgba(183, 162, 149, 0.1);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 28px;
+      color: #4d3f38;
+      letter-spacing: -0.3px;
+      position: relative;
+    }
+
+    .section-title i {
+      color: var(--dusty-pink);
+      margin-right: 12px;
+    }
+
+    /* ----- HOME (hero) ----- */
+    #home {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #3f3530;
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: #7a6b62;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+    }
+
+    .photo-pair {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px 60px;
+      margin: 40px 0;
+    }
+
+    .photo-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 20px 20px;
+      width: 240px;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(232, 198, 194, 0.2);
+    }
+
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(183, 162, 149, 0.12);
+    }
+
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 40px 12px 40px 12px;
+      overflow: hidden;
+      background: #ede5dd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card h3 {
+      margin: 18px 0 6px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #3f3530;
+    }
+
+    .photo-card .sub {
+      color: #8d7b70;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .btn-profile {
+      background: var(--dusty-pink);
+      border: none;
+      padding: 8px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #2f2a27;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(183, 162, 149, 0.1);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-profile:hover {
+      background: #dbb4ae;
+      transform: scale(1.02);
+      box-shadow: 0 6px 14px rgba(183, 162, 149, 0.2);
+    }
+
+    .welcome-text {
+      max-width: 660px;
+      margin: 30px auto 10px;
+      font-size: 1.1rem;
+      color: #5f534a;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 20px 28px;
+      border-radius: 60px 12px 60px 12px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* ----- PROFIL (dua orang) ----- */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px 30px;
+      transition: all 0.25s;
+      border: 1px solid rgba(232, 198, 194, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px rgba(183, 162, 149, 0.08);
+    }
+
+    .profile-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f0e3dc;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+      margin-bottom: 18px;
+    }
+
+    .profile-card h2 {
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #3c322c;
+    }
+
+    .profile-card .badge {
+      background: var(--beige);
+      padding: 4px 18px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      color: #4f4139;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .profile-detail {
+      width: 100%;
+      text-align: left;
+      margin-top: 6px;
+      border-top: 1px solid rgba(183, 162, 149, 0.1);
+      padding-top: 16px;
+    }
+
+    .profile-detail p {
+      margin: 8px 0;
+      display: flex;
+      gap: 8px;
+      font-size: 0.98rem;
+    }
+
+    .profile-detail i {
+      width: 24px;
+      color: var(--dusty-pink);
+    }
+
+    /* ----- PEOPLE (cards) ----- */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .people-card {
+      background: var(--white);
+      border-radius: 30px 12px 30px 12px;
+      padding: 20px 14px 22px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: all 0.2s;
+      border: 1px solid #f1e7e0;
+    }
+
+    .people-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 16px 28px rgba(183, 162, 149, 0.08);
+    }
+
+    .people-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #f0e3dc;
+      margin-bottom: 14px;
+    }
+
+    .people-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .people-card .relation {
+      color: #a28d7e;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .people-card .desc {
+      font-size: 0.9rem;
+      margin-top: 8px;
+      color: #5f534a;
+    }
+
+    .category-label {
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-family: 'Playfair Display', serif;
+      margin: 36px 0 16px;
+      color: #4d3f38;
+      border-left: 6px solid var(--dusty-pink);
+      padding-left: 18px;
+    }
+
+    /* ----- LATAR BELAKANG (timeline) ----- */
+    .timeline-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .timeline-person {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      border-left: 6px solid var(--dusty-pink);
+    }
+
+    .timeline-person h3 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #3f3530;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(183, 162, 149, 0.1);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item .year {
+      font-weight: 600;
+      min-width: 80px;
+      color: #a28d7e;
+    }
+
+    .timeline-item .desc {
+      color: #3f3530;
+    }
+
+    /* ----- FOOTER ----- */
+    footer {
+      background: #f5eee8;
+      padding: 40px 20px 30px;
+      text-align: center;
+      border-radius: 40px 40px 0 0;
+      margin-top: 20px;
+    }
+
+    footer .heart {
+      color: #c99286;
+    }
+
+    footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin: 16px 0 12px;
+      font-size: 1.1rem;
+      flex-wrap: wrap;
+    }
+
+    footer .social a {
+      color: #4d423c;
+      text-decoration: none;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    footer .social a:hover {
+      color: #b28a7a;
+      border-bottom-color: var(--dusty-pink);
+    }
+
+    footer .copy {
+      font-size: 0.9rem;
+      color: #7f6e62;
+      margin-top: 12px;
+    }
+
+    /* ----- responsif kecil ----- */
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2.8rem; }
+      .photo-pair { gap: 20px; }
+      .photo-card { width: 200px; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .people-grid { grid-template-columns: 1fr 1fr; }
+      .container { padding: 0 18px; }
+      nav { gap: 0.8rem; }
+    }
+
+    @media (max-width: 420px) {
+      .people-grid { grid-template-columns: 1fr; }
+      .photo-card { width: 100%; max-width: 260px; }
+    }
+
+    /* dekorasi minimalis (sparkle & flower) */
+    .sparkle {
+      color: var(--dusty-pink);
+      opacity: 0.3;
+      font-size: 0.8rem;
+      margin: 0 4px;
+    }
+
+    .flower-deco {
+      display: inline-block;
+      font-size: 1.2rem;
+      opacity: 0.2;
+      margin: 0 2px;
+    }
+
+    /* foto placeholder (ikon) */
+    .photo-frame i {
+      font-size: 4rem;
+      color: #d4c3b8;
+    }
+    .profile-avatar-placeholder {
+      background: #ede5dd;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #b7a295;
+      margin-bottom: 18px;
+    }
+  </style>
+</head>
+<body>
+<div class="bg-image-main"></div>
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#home"><i class="fas fa-home" style="margin-right: 6px;"></i> HOME</a>
+    <a href="#profil"><i class="fas fa-user" style="margin-right: 6px;"></i> PROFIL</a>
+    <a href="#people"><i class="fas fa-users" style="margin-right: 6px;"></i> PEOPLE</a>
+    <a href="#latar"><i class="fas fa-book-open" style="margin-right: 6px;"></i> LATAR BELAKANG</a>
+  </nav>
+
+  <main class="container">
+
+    <!-- HOME -->
+    <section id="home" class="fade-in">
+      <div class="hero-title">OUR STORY</div>
+      <div class="hero-sub"><span class="flower-deco">✿</span> Two People, Two Stories, One Journey <span class="flower-deco">✿</span></div>
+
+      <div class="photo-pair">
+        <!-- Person 1 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <!-- foto placeholder (ganti dengan gambar asli) -->
+            <img src="https://raw.githubusercontent.com/rndmq/informatika/refs/heads/main/IMG-20260902-WA0003.jpg" alt="Nesha" />
+          </div>
+          <h3>Nesha Nathania</h3>
+          <div class="sub">✨ X BR 2</div>
+          <a href="#profil" class="btn-profile">View Profile</a>
+        </div>
+        <!-- Person 2 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="https://raw.githubusercontent.com/rndmq/informatika/refs/heads/main/IMG-20260902-WA0000.jpg" alt="Shisi" />
+          </div>
+          <h3>Shisi Aulia</h3>
+          <div class="sub">✨ X BR 2</div>
+          <a href="#profil" class="btn-profile">View Profile</a>
+        </div>
+      </div>
+
+      <div class="welcome-text">
+        <i class="fas fa-sparkles" style="color: var(--dusty-pink); margin-right: 8px;"></i>
+        Welcome to our personal website. Get to know us, our stories, our experiences, and the people who are important in our lives.
+      </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="profil" class="fade-in">
+      <h2 class="section-title"><i class="fas fa-address-card"></i> Profil</h2>
+      <div class="profile-grid">
+        <!-- Person 1 -->
+        <div class="profile-card">
+          <div class="profile-avatar-placeholder">
+  <img src="https://raw.githubusercontent.com/rndmq/informatika/refs/heads/main/IMG-20260902-WA0003.jpg" alt="Nesha Nathania Natanael">
+</div>
+          <h2>Nesha Nathania Natanael</h2>
+          <span class="badge">X BR 2 · Bisnis Retail</span>
+          <div class="profile-detail">
+            <p><i class="fas fa-school"></i> SMKN 42 JAKARTA</p>
+            <p><i class="fas fa-calendar-alt"></i> Bogor, 08 Juni 2010</p>
+            <p><i class="fas fa-microphone"></i> Hobi: Nyanyi</p>
+            <p><i class="fas fa-rocket"></i> Cita-cita: Jadi orang have</p>
+            <p><i class="fas fa-quote-left"></i> Kecewalah saat sudah mencoba, jangan kecewa saat belum mencoba</p>
+          </div>
+        </div>
+        <!-- Person 2 -->
+        <div class="profile-card">
+          <div class="profile-avatar-shisi">
+  <img src="https://raw.githubusercontent.com/rndmq/informatika/refs/heads/main/IMG-20260902-WA0000.jpg" alt="Shisi">
+</div>
+          <h2>Shisi Aulia</h2>
+          <span class="badge">X BR 2 · Bisnis Retail</span>
+          <div class="profile-detail">
+            <p><i class="fas fa-school"></i> SMKN 42 JAKARTA</p>
+            <p><i class="fas fa-calendar-alt"></i> Jakarta, 30 November 2010</p>
+            <p><i class="fas fa-headphones"></i> Hobi: Mendengarkan musik</p>
+            <p><i class="fas fa-rocket"></i> Cita-cita: Pengusaha</p>
+            <p><i class="fas fa-quote-left"></i> Hari ini harus lebih baik dari hari kemarin</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <!-- LATAR BELAKANG (timeline) -->
+    <section id="latar" class="fade-in">
+      <h2 class="section-title"><i class="fas fa-timeline"></i> Latar Belakang</h2>
+      <div class="timeline-wrapper">
+        <!-- person 1 -->
+        <div class="timeline-person">
+          <h3>🌸 Nesha Nathania</h3>
+          <div class="timeline-item"><span class="year">Masa kecil</span><span class="desc">HAPPYYY penuh tawa</span></div>
+          <div class="timeline-item"><span class="year">Pendidikan</span><span class="desc">PAUD, SD, SMP, SMK (sekarang)</span></div>
+          <div class="timeline-item"><span class="year">Pengalaman</span><span class="desc">BANYAK HAL, dari organisasi hingga lomba</span></div>
+          <div class="timeline-item"><span class="year">Kegiatan</span><span class="desc">Ketua OSIS di SMP, aktif berorganisasi</span></div>
+          <div class="timeline-item"><span class="year">Perkembangan</span><span class="desc">BISA MENGONTROL EMOSI, lebih dewasa</span></div>
+          <div class="timeline-item"><span class="year">Impian</span><span class="desc">JADI ORANG HAVE, sukses dan bahagia</span></div>
+        </div>
+        <!-- person 2 -->
+        <div class="timeline-person">
+          <h3>🌷 Shisi Aulia</h3>
+          <div class="timeline-item"><span class="year">Masa kecil</span><span class="desc">bahagia, penuh warna</span></div>
+          <div class="timeline-item"><span class="year">Pendidikan</span><span class="desc">PAUD, SD, SMP, SMK (sekarang)</span></div>
+          <div class="timeline-item"><span class="year">Pengalaman</span><span class="desc">banyak hal dari sekolah & lingkungan rumah</span></div>
+          <div class="timeline-item"><span class="year">Kegiatan</span><span class="desc">OSN IPS, aktif kegiatan sekolah</span></div>
+          <div class="timeline-item"><span class="year">Perkembangan</span><span class="desc">lebih mandiri dan percaya diri</span></div>
+          <div class="timeline-item"><span class="year">Impian</span><span class="desc">membanggakan orang tua, sukses</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="font-size: 1.2rem;">Made with <span class="heart">♡</span> by two friends</div>
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i> @neshanatanael_56u</a>
+      <a href="#"><i class="fab fa-instagram"></i> @cicituru_</a>
+      <a href="#"><i class="fas fa-envelope"></i> CONTACT US</a>
+    </div>
+    <div class="copy">© 2026 Our Story · <span class="sparkle">✦</span> friendship journal <span class="sparkle">✦</span></div>
+  </footer>
+
+  <!-- FADE-IN + SMOOTH SCROLL (Intersection Observer) -->
+  <script>
+    (function() {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.2 });
+      fadeElements.forEach(el => observer.observe(el));
+
+      // smooth scroll (opsional, karena sudah pakai scroll-behavior)
+      document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
